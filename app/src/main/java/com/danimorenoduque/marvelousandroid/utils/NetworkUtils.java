@@ -1,5 +1,7 @@
 package com.danimorenoduque.marvelousandroid.utils;
 
+import com.danimorenoduque.marvelousandroid.BuildConfig;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -11,8 +13,9 @@ import java.util.Scanner;
  */
 
 public class NetworkUtils {
-    private final String BASE_URL = "https://swapi.co/api/";
-    private final String PIPOL = "people";
+    private static String BASE_URL = "https://gateway.marvel.com:443/";
+    private static String API_VERSION = "v1/public/";
+    private static String API_PUBLIC_KEY = BuildConfig.API_KEY;
 
     public static String getResponseFromHttpUrl(URL url) throws IOException {
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
